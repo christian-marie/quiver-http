@@ -1,0 +1,13 @@
+flags: {}
+packages:
+- '.'
+extra-deps:
+- fractals-0.1.0.0
+- quiver-0.0.0.11
+- quiver-bytestring-0.0.0.2
+- quiver-cell-0.0.0.2
+- quiver-csv-0.0.0.3
+- quiver-enumerator-0.0.0.1
+- data-cell-1.0.0.2
+resolver: lts-3.0
+system-ghc: true
