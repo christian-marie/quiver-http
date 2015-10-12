@@ -128,7 +128,7 @@ brReadSome' brRead' =
 --
 -- Each 'ByteString' produced will be sent as a seperate chunk.
 makeChunkedRequestBody :: Producer ByteString () IO () -> RequestBody
-makeChunkedRequestBody p = RequestBodyStreamChunked (givePopper p)
+makeChunkedRequestBody p = RequestBodyStreamChunkedAsync (givePopper p)
 
 -- | Build a 'RequestBody' by sending a Content-Length header and then
 -- streaming a 'Producer'.
@@ -136,7 +136,7 @@ makeChunkedRequestBody p = RequestBodyStreamChunked (givePopper p)
 -- You should probably use 'makeChunkedRequestBody' if it is supported by the
 -- server.
 makeFixedRequestBody :: Int64 -> Producer ByteString () IO () -> RequestBody
-makeFixedRequestBody len p = RequestBodyStream len (givePopper p)
+makeFixedRequestBody len p = RequestBodyStreamAsync len (givePopper p)
 
 -- | http-client is weird, it wants us to make poppers and give them to it.
 --

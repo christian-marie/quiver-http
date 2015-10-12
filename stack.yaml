@@ -1,6 +1,11 @@
 flags: {}
 packages:
 - '.'
+- location:
+    git: git@github.com:christian-marie/http-client
+    commit: 42454fd622b15c226118438cb0a51d16d56de29e
+  subdirs:
+  - http-client
 extra-deps:
 - fractals-0.1.0.0
 - quiver-0.0.0.11
